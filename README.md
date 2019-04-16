@@ -1,2 +1,2 @@
 # HeadlineGenerator
-Headline generator to generate headline ofa news! For the partial fulfilment of COMP 473.
+Headline generator to generate headline of a news! For the partial fulfilment of COMP 473.
