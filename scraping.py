@@ -3,8 +3,8 @@ import urllib.request
 import json,csv
 import re
 
-urlpage='https://onlinekhabr.onlinenetwork.com/category/24'
-page = urllib.request.urlopen(urlpage)
+urlpg='https://onlinekhabr.onlinenetwork.com/category/24'
+page = urllib.request.urlopen(urlpg)
 soup = BeautifulSoup(page, 'html.parser')
 pattern='https://onlinekhabar.onlinenetwork.com'
 article = soup.find_all('div', attrs={'class': 'col-sm-3 part-ent'})
