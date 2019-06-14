@@ -3,10 +3,10 @@ import urllib.request
 import json,csv
 import re
 
-urlpage='https://nagariknews.nagariknetwork.com/category/24'
+urlpage='https://onlinekhabr.onlinenetwork.com/category/24'
 page = urllib.request.urlopen(urlpage)
 soup = BeautifulSoup(page, 'html.parser')
-pattern='https://nagariknews.nagariknetwork.com'
+pattern='https://onlinekhabar.onlinenetwork.com'
 article = soup.find_all('div', attrs={'class': 'col-sm-3 part-ent'})
 url=[]
 for k in article:
@@ -28,7 +28,7 @@ for url in finalurl:
     if re.search(pattern,url):
         finalurl[finalurl.index(url)]=url
     else:
-        finalurl[finalurl.index(url)]="https://nagariknews.nagariknetwork.com"+url
+        finalurl[finalurl.index(url)]="https://onlinekhabar.onlinenetwork.com"+url
 print(finalurl)
 data={}
 print(len(finalurl))
@@ -50,7 +50,7 @@ for url in finalurl:
     
 
     data["".join(heading)] = "".join(paragraph)
-data_to_file= open( "C:/Users/Krishu Thapa/Desktop/__pycache__/ekantipur.csv",'w',encoding='utf-16')
+data_to_file= open( "C:/Users/Krishu Thapa/Desktop/__pycache__/onlinekhabar.csv",'w',encoding='utf-16')
 csv_write=csv.writer(data_to_file)
 for row1,row2 in data.items():
    csv_write.writerow([row1,row2])
